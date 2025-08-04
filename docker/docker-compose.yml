@@ -1,0 +1,14 @@
+---
+services:
+  Dashboard:
+    image: mhzawadi/dashbaord:dev
+    ports:
+      - "8080:8080"
+    container_name: dashboard
+    environment:
+      - TZ=Europe/London
+    volumes:
+      - /Users/matt/git/dashbaord:/var/www/html
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    labels:
+      - "dashboard.url=127.0.0.1:8080"
