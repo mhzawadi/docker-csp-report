@@ -23,6 +23,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: mhzawadi/dashbaord:dev
+          tags: mhzawadi/csp-report:dev
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           file: ./docker/Dockerfile-dev

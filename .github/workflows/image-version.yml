@@ -28,5 +28,5 @@ jobs:
         with:
           push: true
           platforms: linux/amd64,linux/arm64,linux/arm/v7
-          tags: "mhzawadi/dashbaord:${{ steps.prepare.outputs.version }}"
+          tags: "mhzawadi/csp-report:${{ steps.prepare.outputs.version }}"
           file: ./docker/Dockerfile
