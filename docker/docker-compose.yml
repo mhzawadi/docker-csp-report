@@ -1,6 +1,6 @@
 ---
 services:
-  Dashboard:
+  csp-report:
     image: mhzawadi/csp-report:dev
     ports:
       - "8080:8080"
