@@ -8,7 +8,7 @@ RUN apk update && apk upgrade && \
     && mkdir -p /run/nginx \
     && rm -f /var/cache/apk/*; \
     [ -f /usr/bin/php ] && rm -f /usr/bin/php; \
-    ln -s /usr/bin/php84 /usr/bin/php; \
+    ln -s /usr/bin/php84 /usr/bin/php;
 
 COPY docker/config /config
 
