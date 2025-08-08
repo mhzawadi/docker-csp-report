@@ -13,7 +13,7 @@ RUN apk update && apk upgrade && \
 COPY docker/config /config
 
 WORKDIR /var/www/html
-COPY . .
+COPY src/public/csp-report.php .
 
 EXPOSE 8080
 ENTRYPOINT ["/config/start.sh"]
