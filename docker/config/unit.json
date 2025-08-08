@@ -7,38 +7,17 @@
 
   "routes": [
     {
-      "match": {
-        "uri": "/uploads/*"
-      },
-
       "action": {
-        "share": "/var/www/html/user_data$uri"
-      }
-    },
-    {
-      "match": {
-        "uri": [
-          "~\\.(css|gif|html?|ico|jpg|js(on)?|png|svg|ttf|woff2?)$",
-          "!*/uploads/*"
-         ]
-      },
-
-      "action": {
-        "share": "/var/www/html/src/public$uri"
-      }
-    },
-    {
-      "action": {
-        "pass": "applications/dashboard"
+        "pass": "applications/csp_report"
       }
     }
   ],
 
   "applications": {
-    "dashboard": {
+    "csp_report": {
       "type": "php",
-      "root": "/var/www/html/src/public/",
-      "script": "index.php"
+      "root": "/var/www/html/",
+      "script": "csp-report.php"
     }
   },
   "access_log": {

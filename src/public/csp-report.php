@@ -9,6 +9,11 @@ if (empty($input)) {
 
 $report = json_decode($input, true);
 
+if($report['csp-report']['script-sample'] === 'docker health check'){
+  http_response_code(200);
+  exit;
+}
+
 // Check for JSON decoding errors
 if (json_last_error() !== JSON_ERROR_NONE) {
     http_response_code(400);
@@ -25,8 +30,19 @@ if (!is_array($report) ||
     exit;
 }
 
+$timestamp = date('Y-m-d H:i:s');
+$proxyServer = '';
+
+if (isset($_SERVER['PROXY_SERVER'])){
+    $proxyServer = $_SERVER['PROXY_SERVER'];
+}
+
+$report['timestamp'] = $timestamp;
+$report['PROXY_SERVER'] = $proxyServer;
+$logEntry = json_encode($report);
+
 // Log to a file (make sure the directory is writable by your web server)
-if (file_put_contents(__DIR__ . '/../logs/csp_violations.log', $input . PHP_EOL, FILE_APPEND | LOCK_EX) === false) {
+if (file_put_contents(__DIR__ . '/logs/'.date('Ymd').'_csp_violations.log', $logEntry . PHP_EOL, FILE_APPEND | LOCK_EX) === false) {
     error_log('Failed to write CSP violation report');
     http_response_code(500);
     exit;
