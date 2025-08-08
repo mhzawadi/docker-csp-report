@@ -25,6 +25,10 @@
 
 *  fix dockerfile. [Matthew Horwood]
 
+### Documentation
+
+*  changelog. [Matthew Horwood]
+
 ### Changes
 
 *  fix up docker compose. [Matthew Horwood]
