@@ -1,6 +1,21 @@
 # Changelog
 
 
+## (unreleased)
+
+### Documentation
+
+*  update changelog. [Matthew Horwood]
+
+### Changes
+
+*  use latest image. [Matthew Horwood]
+
+### Other
+
+* Dock: update readme. [Matthew Horwood]
+
+
 ## v0.0.2 (2025-08-08)
 
 ### New
