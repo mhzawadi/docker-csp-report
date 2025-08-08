@@ -1,9 +1,11 @@
 # Changelog
 
 
-## (unreleased)
+## v0.0.3 (2025-08-08)
 
 ### Documentation
+
+*  change log for tag v0.0.3. [Matthew Horwood]
 
 *  update changelog. [Matthew Horwood]
 
