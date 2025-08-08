@@ -1,6 +1,6 @@
 #!/bin/sh
 
 docker compose -f docker/docker-compose.yml down;
-docker image rm mhzawadi/dashbaord:dev && \
-docker build -t mhzawadi/dashbaord:dev -f ./docker/Dockerfile-dev . && \
+docker image rm mhzawadi/csp-report:dev && \
+docker build -t mhzawadi/csp-report:dev -f ./docker/Dockerfile . && \
 docker compose -f docker/docker-compose.yml up
