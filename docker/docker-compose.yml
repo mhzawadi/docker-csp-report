@@ -1,7 +1,7 @@
 ---
 services:
   csp-report:
-    image: mhzawadi/csp-report:dev
+    image: mhzawadi/csp-report
     ports:
       - "8080:8080"
     container_name: csp-report

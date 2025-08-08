@@ -1,4 +1,4 @@
-# Horwood PHP CSP report tooll
+# Horwood PHP CSP report tool
 
 This will log all CSP reports to a log file
 
@@ -10,7 +10,7 @@ There is an example compose file in the docker directory, this will start a cont
 ---
 services:
   csp-report:
-    image: mhzawadi/csp-report:dev
+    image: mhzawadi/csp-report
     ports:
       - "8080:8080"
     container_name: csp-report
