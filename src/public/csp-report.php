@@ -33,7 +33,7 @@ if (!is_array($report) ||
 $timestamp = date('Y-m-d H:i:s');
 $proxyServer = '';
 
-if ($_SERVER['PROXY_SERVER']){
+if (isset($_SERVER['PROXY_SERVER'])){
     $proxyServer = $_SERVER['PROXY_SERVER'];
 }
 
