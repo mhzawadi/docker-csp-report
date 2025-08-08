@@ -1,7 +1,7 @@
 # Changelog
 
 
-## (unreleased)
+## v0.0.1 (2025-08-08)
 
 ### New
 
@@ -26,6 +26,8 @@
 *  fix dockerfile. [Matthew Horwood]
 
 ### Documentation
+
+*  change log for tag v0.0.1. [Matthew Horwood]
 
 *  changelog. [Matthew Horwood]
 
