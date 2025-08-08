@@ -16,7 +16,7 @@
   "applications": {
     "csp_report": {
       "type": "php",
-      "root": "/var/www/html/src/public/",
+      "root": "/var/www/html/",
       "script": "csp-report.php"
     }
   },
