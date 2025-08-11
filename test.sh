@@ -1,3 +1,5 @@
+#!/bin/sh
+
 curl -i -X POST http://127.0.0.1:8080 \
   -H "application/reports+json" \
   --data '{"csp-report":{"document-uri":"https://www.horwood.biz","referrer":"https://www.horwood.biz/","violated-directive":"docker health check","effective-directive":"docker health check","original-policy":"docker health check","disposition":"docker health check","blocked-uri":"https://www.horwood.biz/","status-code":200,"script-sample":""}}'

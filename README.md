@@ -16,8 +16,16 @@ services:
     container_name: csp-report
     environment:
       - TZ=Europe/London
-    labels:
-      - "csp_report.url=127.0.0.1:8080"
     volumes:
       - ../csp:/var/www/html/logs
+```
+
+## Testing
+
+There is a test script that will get this to log, just run `./test.sh`
+
+```bash
+curl -i -X POST http://127.0.0.1:8080 \
+  -H "application/reports+json" \
+  --data '{"csp-report":{"document-uri":"https://www.horwood.biz","referrer":"https://www.horwood.biz/","violated-directive":"docker health check","effective-directive":"docker health check","original-policy":"docker health check","disposition":"docker health check","blocked-uri":"https://www.horwood.biz/","status-code":200,"script-sample":""}}'
 ```

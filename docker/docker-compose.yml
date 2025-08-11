@@ -7,7 +7,5 @@ services:
     container_name: csp-report
     environment:
       - TZ=Europe/London
-    labels:
-      - "csp_report.url=127.0.0.1:8080"
     volumes:
       - ../csp:/var/www/html/logs
