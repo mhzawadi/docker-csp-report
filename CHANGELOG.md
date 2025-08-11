@@ -1,6 +1,17 @@
 # Changelog
 
 
+## (unreleased)
+
+### New
+
+*  test script that works chor: remove label chor: rename test script doc: how to test. [Matthew Horwood]
+
+### Documentation
+
+*  release marker. [Matthew Horwood]
+
+
 ## v0.0.3 (2025-08-08)
 
 ### Documentation
