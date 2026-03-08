@@ -2,7 +2,7 @@
 echo '<!doctype html>
 <html lang="en">
   <head>
-  <title>Test</title>
+  <title>Report</title>
   </head>
   <body>
     <pre>';
