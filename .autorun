@@ -3,10 +3,10 @@
 if [ ! -d .venv ]
 then
   echo -e "\x1b[0;31mYou need an environment setup...\x1b[0m"
-  python3.10 -m venv .venv
+  python3 -m venv .venv
   source .venv/bin/activate
-  python3.10 -m pip install --upgrade pip
-  python3.10 -m pip install -r requirements.txt
+  python3 -m pip install --upgrade pip
+  python3 -m pip install -r requirements.txt
   echo -e "\x1b[0;33mthere, its all done\x1b[0m"
 elif [ -z "$VIRTUAL_ENV" ]
 then
@@ -22,7 +22,6 @@ function git-tag() {
       echo "<tag>"
       echo "v1.2.3"
     else
-      sed -i '' "s/version v[0-9]*\.[0-9]*\.[0-9]*/version $1/" src/view/settings_app.php
       gitchangelog >| CHANGELOG.md
       git add .
       git commit -m "doc: change log for tag $1"
