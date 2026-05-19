@@ -9,6 +9,6 @@ then
   sed -i "s!Europe/London!$TZ!" /etc/php84/php.ini
 fi
 
-php-fpm84 --allow-to-run-as-root
+php-fpm84
 
 exec "$@"
