@@ -67,3 +67,5 @@ fabric.properties
 vendor
 user_data/*
 .venv
+
+csp/

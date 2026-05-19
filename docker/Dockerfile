@@ -1,25 +1,28 @@
-FROM alpine:3.21
+FROM alpine:3.23
 LABEL org.opencontainers.image.authors="matt@horwood.biz"
 
 # Install required deb packages
 RUN apk update && apk upgrade && \
-    apk add gnupg unit-php84 php84-json php84 php84-phar curl git \
+    apk add gnupg nginx php84-fpm php84-json php84 php84-phar curl git \
     && mkdir -p /var/www/html/ \
     && mkdir -p /run/nginx \
     && rm -f /var/cache/apk/*; \
     [ -f /usr/bin/php ] && rm -f /usr/bin/php; \
     ln -s /usr/bin/php84 /usr/bin/php; \
-    mkdir /var/www/html/logs && \
-    chown unit:unit /var/www/html/logs;
+    mkdir /var/www/html/logs;
 
 COPY docker/config /config
+RUN cp /config/php.ini /etc/php84/php.ini && \
+    cp /config/php-fpm.conf /etc/php84/php-fpm.conf && \
+    cp /config/php_fpm_site.conf /etc/php84/php-fpm.d/www.conf && \
+    cp /config/nginx_site.conf /etc/nginx/http.d/default.conf;
 
 WORKDIR /var/www/html
-COPY src/public/csp-report.php .
+COPY src/public/* .
 
 EXPOSE 8080
 ENTRYPOINT ["/config/start.sh"]
-CMD ["unitd", "--no-daemon", "--control", "unix:/var/run/control.unit.sock"]
+CMD ["nginx", "-g", "daemon off;"]
 
 ## Health Check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s \
